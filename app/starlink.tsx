@@ -13,7 +13,7 @@ export default function StarLink({ href, label, target }: StarLinkProps) {
       href={href} 
       target={target} 
       rel="noopener noreferrer"
-      className="group relative flex flex-row items-center gap-8 transition-all duration-500 hover:translate-x-2"
+      className="group relative flex flex-row z-10 items-center gap-8 transition-all duration-500 hover:translate-x-2"
     >
       {/* Distorted Floating Star (Now on the Left) */}
       <div className="relative animate-[bounce_6s_infinite_ease-in-out] shrink-0">
