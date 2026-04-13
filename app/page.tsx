@@ -72,10 +72,10 @@ export default function Home() {
      
 
       {/* Star Buttons Container - Added mt-20 to move it lower */}
-<div className="flex flex-col items-center gap-24 w-full mt-48 pb-20">
+<div className="flex z-[60] flex-col items-center gap-24 w-full mt-48 pb-20">
   <StarLink href="https://instagram.com/beautymeetsnerd_" label="Instagram" target="_blank" />
-  <StarLink href="https://tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
-  <StarLink href="#" label="Affiliate Link" target="_blank" />
+  <StarLink href="https://www.tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
+  <StarLink href="#" label="TOLLY TOLLY" target="_blank" />
 </div>
 
     </main>
