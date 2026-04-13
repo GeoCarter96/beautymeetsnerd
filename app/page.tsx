@@ -1,65 +1,83 @@
-import Image from "next/image";
+import Image from 'next/image';
+import StarLink from './starlink';
+
+
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="relative flex min-h-screen flex-col items-center pt-16 pb-10 px-4 overflow-hidden">
+     <div className="pointer-events-none fixed inset-0 z-30">
+        {/* Small, fast flakes (Background) */}
+        <div className="grunge-snow absolute inset-0 opacity-20 [animation-duration:8s] [background-size:150px_150px]" />
+        {/* Medium flakes (Mid-ground) */}
+        <div className="grunge-snow absolute inset-0 opacity-40 [animation-duration:5s] [background-size:250px_250px] [animation-delay:2s]" />
+        {/* Large, slow flakes (Foreground) */}
+        <div className="grunge-snow absolute inset-0 opacity-10 [animation-duration:12s] [background-size:400px_400px] blur-[1px]" />
+      </div>
+
+      {/* 2. Your Existing Background Image */}
+      <div className="absolute inset-0 -z-10">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/beauty.jpg"
+          alt="Background"
+          fill
           priority
+          className="object-cover brightness-[0.4] contrast-125 scale-110"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+            <div className="pointer-events-none fixed inset-0 z-40 opacity-[0.15] mix-blend-screen" 
+           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200'..."` }}>
+      </div>
+
+      {/* Background Image (Resembles the photo's depth) */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/beauty.jpg" // Place your photo in /public
+          alt="Background"
+          fill
+          priority
+          className="object-cover brightness-[0.6]  scale-110"
+        />
+      </div>
+
+  <div className="relative group -rotate-1 mb-12 scale-90 md:scale-100">
+  {/* --- DISTORTED BACKGROUND GLOW (Reduced Scale) --- */}
+  <div className="absolute inset-0 -z-10 scale-125">
+    <div className="absolute inset-0 bg-pink-600/20 blur-[40px] rounded-full animate-pulse" />
+    <div className="absolute inset-0 bg-purple-900/30 blur-[30px] rounded-full -translate-x-2 translate-y-1 animate-bounce [animation-duration:8s]" />
+  </div>
+
+  {/* JAGGED TORN PAPER BORDERS (Tighter Insets) */}
+  {/* Layer 1: The "Ripped" Pink Backing */}
+  <div className="absolute -inset-3 bg-pink-900/20 -z-10"
+       style={{ clipPath: "polygon(2% 8%, 98% 4%, 92% 95%, 5% 92%, 0% 50%)" }} />
+  
+  {/* Layer 2: The Main Torn Box */}
+  <div className="absolute -inset-1 border-[2px] border-white/20 bg-black/40 backdrop-blur-sm shadow-[5px_5px_0px_rgba(0,0,0,0.5)]"
+       style={{ clipPath: "polygon(5% 2%, 95% 5%, 100% 45%, 94% 94%, 50% 100%, 3% 92%, 0% 40%)" }} />
+
+  {/* The Handle (Smaller Font: 4xl to 5xl) */}
+  <h1 className="relative z-10 text-4xl md:text-5xl font-black italic uppercase tracking-tighter 
+                 bg-gradient-to-r from-pink-500 via-purple-400 to-white 
+                 bg-clip-text text-transparent 
+                 filter drop-shadow-[3px_3px_0px_rgba(0,0,0,0.8)]">
+    @beautymeetsnerd_
+  </h1>
+
+  {/* Glitch Tape/Underline (Thinner) */}
+  <div className="absolute -bottom-4 -left-2 w-[105%] h-2.5 bg-pink-600/80 -rotate-1 skew-x-12"
+       style={{ clipPath: "polygon(0% 15%, 15% 0%, 85% 15%, 100% 0%, 95% 85%, 80% 100%, 15% 85%, 0% 100%)" }} />
+</div>
+
+     
+
+      {/* Star Buttons Container - Added mt-20 to move it lower */}
+<div className="flex flex-col items-center gap-24 w-full mt-48 pb-20">
+  <StarLink href="https://instagram.com/beautymeetsnerd_" label="Instagram" target="_blank" />
+  <StarLink href="https://tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
+  <StarLink href="#" label="Affiliate Link" target="_blank" />
+</div>
+
+    </main>
   );
 }
