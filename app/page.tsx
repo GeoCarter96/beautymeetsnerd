@@ -75,9 +75,9 @@ export default function Home() {
 <div className="flex z-[60] flex-col items-center gap-24 w-full mt-48 pb-20">
   <StarLink href="https://instagram.com/beautymeetsnerd_" label="Instagram" target="_blank" />
   <StarLink href="https://www.tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
-  <StarLink href="#" label="TOLLY TOLLY" target="_blank" />
+  <StarLink href="#" label="TOLY TOLLY" target="_blank" />
 </div>
 
-    </main>
+    </main> 
   );
 }
