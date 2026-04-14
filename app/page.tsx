@@ -16,15 +16,17 @@ export default function Home() {
       </div>
 
       {/* 2. Your Existing Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/beauty.jpg"
-          alt="Background"
-          fill
-          priority
-          className="object-cover brightness-[0.4] contrast-125 scale-110"
-        />
-      </div>
+  <div className="absolute inset-0 -z-10 overflow-hidden bg-black">
+  <Image
+    src="/beauty.jpg"
+    alt="Background"
+    fill
+    priority
+    className="object-contain brightness-[0.4] contrast-125 scale-75" 
+  />
+</div>
+
+
             <div className="pointer-events-none fixed inset-0 z-40 opacity-[0.15] mix-blend-screen" 
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200'..."` }}>
       </div>
@@ -72,7 +74,7 @@ export default function Home() {
      
 
       {/* Star Buttons Container - Added mt-20 to move it lower */}
-<div className="flex z-[60] flex-col items-center gap-24 w-full mt-48 pb-20">
+<div className="flex z-[999] flex-col items-center gap-24 w-full mt-48 pb-20">
   <StarLink href="https://instagram.com/beautymeetsnerd_" label="Instagram" target="_blank" />
   <StarLink href="https://www.tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
   <StarLink href="#" label="TOLY TOLLY" target="_blank" />
