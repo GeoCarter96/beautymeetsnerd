@@ -79,6 +79,7 @@ export default function Home() {
   <StarLink href="https://www.tiktok.com/@beautymeetsnerde" label="TikTok" target="_blank" />
   <StarLink href="https://tolytolly.com/?aff=1462" label="TOLY TOLLY" target="_blank" />
     <StarLink href="https://www.youtube.com/@beautymeetsnerd" label="YOUTUBE" target="_blank" />
+    <StarLink href="https://www.twitch.tv/beautymeetsnerd" label="TWITCH" target="_blank" />
 </div>
 
     </main> 
